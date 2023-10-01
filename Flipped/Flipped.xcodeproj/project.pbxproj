@@ -9,21 +9,38 @@
 /* Begin PBXBuildFile section */
 		D41EE8CA2AC8B5D0003D63EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8C92AC8B5D0003D63EE /* AppDelegate.swift */; };
 		D41EE8CC2AC8B5D0003D63EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8CB2AC8B5D0003D63EE /* SceneDelegate.swift */; };
-		D41EE8CE2AC8B5D0003D63EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8CD2AC8B5D0003D63EE /* ViewController.swift */; };
+		D41EE8CE2AC8B5D0003D63EE /* AnimationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8CD2AC8B5D0003D63EE /* AnimationListVC.swift */; };
 		D41EE8D12AC8B5D0003D63EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41EE8CF2AC8B5D0003D63EE /* Main.storyboard */; };
 		D41EE8D32AC8B5D2003D63EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41EE8D22AC8B5D2003D63EE /* Assets.xcassets */; };
 		D41EE8D62AC8B5D2003D63EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41EE8D42AC8B5D2003D63EE /* LaunchScreen.storyboard */; };
+		D41EE8DF2AC8F2B5003D63EE /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8DE2AC8F2B5003D63EE /* Realm */; };
+		D41EE8E12AC8F2B5003D63EE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8E02AC8F2B5003D63EE /* RealmSwift */; };
+		D41EE8E62AC8F44A003D63EE /* AnimationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8E52AC8F44A003D63EE /* AnimationListModel.swift */; };
+		D41EE8E82AC8F56A003D63EE /* AnimationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8E72AC8F56A003D63EE /* AnimationDetailVC.swift */; };
+		D41EE8EB2AC8F584003D63EE /* AnimationDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8EA2AC8F584003D63EE /* AnimationDetailModel.swift */; };
+		D41EE8ED2AC8F5C0003D63EE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8EC2AC8F5C0003D63EE /* Animation.swift */; };
+		D41EE8EF2AC8F5C7003D63EE /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8EE2AC8F5C7003D63EE /* Frame.swift */; };
+		D41EE8F22AC8FBD7003D63EE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8F12AC8FBD7003D63EE /* SnapKit */; };
+		D41EE8F42AC8FBD7003D63EE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8F32AC8FBD7003D63EE /* SnapKit-Dynamic */; };
+		D41EE8F62AC8FC04003D63EE /* FrameArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8F52AC8FC04003D63EE /* FrameArchive.swift */; };
+		D41EE8F92AC8FD2E003D63EE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8F82AC8FD2E003D63EE /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D41EE8C62AC8B5D0003D63EE /* Flipped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flipped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41EE8C92AC8B5D0003D63EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D41EE8CB2AC8B5D0003D63EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D41EE8CD2AC8B5D0003D63EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D41EE8CD2AC8B5D0003D63EE /* AnimationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationListVC.swift; sourceTree = "<group>"; };
 		D41EE8D02AC8B5D0003D63EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D41EE8D22AC8B5D2003D63EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D41EE8D52AC8B5D2003D63EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D41EE8D72AC8B5D2003D63EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D41EE8E52AC8F44A003D63EE /* AnimationListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationListModel.swift; sourceTree = "<group>"; };
+		D41EE8E72AC8F56A003D63EE /* AnimationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDetailVC.swift; sourceTree = "<group>"; };
+		D41EE8EA2AC8F584003D63EE /* AnimationDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDetailModel.swift; sourceTree = "<group>"; };
+		D41EE8EC2AC8F5C0003D63EE /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		D41EE8EE2AC8F5C7003D63EE /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		D41EE8F52AC8FC04003D63EE /* FrameArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameArchive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41EE8F22AC8FBD7003D63EE /* SnapKit in Frameworks */,
+				D41EE8E12AC8F2B5003D63EE /* RealmSwift in Frameworks */,
+				D41EE8DF2AC8F2B5003D63EE /* Realm in Frameworks */,
+				D41EE8F92AC8FD2E003D63EE /* SwiftyJSON in Frameworks */,
+				D41EE8F42AC8FBD7003D63EE /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +80,51 @@
 			children = (
 				D41EE8C92AC8B5D0003D63EE /* AppDelegate.swift */,
 				D41EE8CB2AC8B5D0003D63EE /* SceneDelegate.swift */,
-				D41EE8CD2AC8B5D0003D63EE /* ViewController.swift */,
+				D41EE8E32AC8F3BC003D63EE /* RealmModels */,
+				D41EE8E22AC8F3BC003D63EE /* VCs */,
 				D41EE8CF2AC8B5D0003D63EE /* Main.storyboard */,
 				D41EE8D22AC8B5D2003D63EE /* Assets.xcassets */,
 				D41EE8D42AC8B5D2003D63EE /* LaunchScreen.storyboard */,
 				D41EE8D72AC8B5D2003D63EE /* Info.plist */,
 			);
 			path = Flipped;
+			sourceTree = "<group>";
+		};
+		D41EE8E22AC8F3BC003D63EE /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				D41EE8E42AC8F437003D63EE /* AnimationList */,
+				D41EE8E92AC8F570003D63EE /* AnimationDetail */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		D41EE8E32AC8F3BC003D63EE /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				D41EE8EC2AC8F5C0003D63EE /* Animation.swift */,
+				D41EE8EE2AC8F5C7003D63EE /* Frame.swift */,
+				D41EE8F52AC8FC04003D63EE /* FrameArchive.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		D41EE8E42AC8F437003D63EE /* AnimationList */ = {
+			isa = PBXGroup;
+			children = (
+				D41EE8CD2AC8B5D0003D63EE /* AnimationListVC.swift */,
+				D41EE8E52AC8F44A003D63EE /* AnimationListModel.swift */,
+			);
+			path = AnimationList;
+			sourceTree = "<group>";
+		};
+		D41EE8E92AC8F570003D63EE /* AnimationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D41EE8E72AC8F56A003D63EE /* AnimationDetailVC.swift */,
+				D41EE8EA2AC8F584003D63EE /* AnimationDetailModel.swift */,
+			);
+			path = AnimationDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +143,13 @@
 			dependencies = (
 			);
 			name = Flipped;
+			packageProductDependencies = (
+				D41EE8DE2AC8F2B5003D63EE /* Realm */,
+				D41EE8E02AC8F2B5003D63EE /* RealmSwift */,
+				D41EE8F12AC8FBD7003D63EE /* SnapKit */,
+				D41EE8F32AC8FBD7003D63EE /* SnapKit-Dynamic */,
+				D41EE8F82AC8FD2E003D63EE /* SwiftyJSON */,
+			);
 			productName = Flipped;
 			productReference = D41EE8C62AC8B5D0003D63EE /* Flipped.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +178,11 @@
 				Base,
 			);
 			mainGroup = D41EE8BD2AC8B5D0003D63EE;
+			packageReferences = (
+				D41EE8DD2AC8F2B5003D63EE /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D41EE8F02AC8FBD7003D63EE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D41EE8F72AC8FD2E003D63EE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = D41EE8C72AC8B5D0003D63EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +210,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41EE8CE2AC8B5D0003D63EE /* ViewController.swift in Sources */,
+				D41EE8CE2AC8B5D0003D63EE /* AnimationListVC.swift in Sources */,
+				D41EE8F62AC8FC04003D63EE /* FrameArchive.swift in Sources */,
+				D41EE8EF2AC8F5C7003D63EE /* Frame.swift in Sources */,
+				D41EE8EB2AC8F584003D63EE /* AnimationDetailModel.swift in Sources */,
 				D41EE8CA2AC8B5D0003D63EE /* AppDelegate.swift in Sources */,
+				D41EE8E82AC8F56A003D63EE /* AnimationDetailVC.swift in Sources */,
 				D41EE8CC2AC8B5D0003D63EE /* SceneDelegate.swift in Sources */,
+				D41EE8ED2AC8F5C0003D63EE /* Animation.swift in Sources */,
+				D41EE8E62AC8F44A003D63EE /* AnimationListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +439,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D41EE8DD2AC8F2B5003D63EE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D41EE8F02AC8FBD7003D63EE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		D41EE8F72AC8FD2E003D63EE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D41EE8DE2AC8F2B5003D63EE /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D41EE8DD2AC8F2B5003D63EE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D41EE8E02AC8F2B5003D63EE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D41EE8DD2AC8F2B5003D63EE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		D41EE8F12AC8FBD7003D63EE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D41EE8F02AC8FBD7003D63EE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D41EE8F32AC8FBD7003D63EE /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D41EE8F02AC8FBD7003D63EE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		D41EE8F82AC8FD2E003D63EE /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D41EE8F72AC8FD2E003D63EE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D41EE8BE2AC8B5D0003D63EE /* Project object */;
 }
