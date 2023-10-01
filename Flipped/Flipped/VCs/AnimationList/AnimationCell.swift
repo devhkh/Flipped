@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class AnimationCell: UICollectionViewCell, ReusableView {
+    /*
     lazy var labelBackView: UIView = {
         let v = UIView()
         v.backgroundColor = .white
@@ -22,10 +23,10 @@ class AnimationCell: UICollectionViewCell, ReusableView {
         v.textAlignment = .left
         return v
     }()
-    
+    */
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        /*
         addSubview(labelBackView)
         labelBackView.addSubview(label)
         
@@ -41,7 +42,7 @@ class AnimationCell: UICollectionViewCell, ReusableView {
             make.left.equalTo(labelBackView).offset(10)
             make.right.equalTo(labelBackView).offset(-10)
             make.bottom.equalTo(labelBackView)
-        }
+        }*/
     }
     
     required init?(coder: NSCoder) {

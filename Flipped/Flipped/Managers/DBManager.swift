@@ -26,7 +26,7 @@ class DBManager: NSObject {
                 default:
                     break
                 }
-        }, deleteRealmIfMigrationNeeded: false)
+        }, deleteRealmIfMigrationNeeded: true)
         do {
             realm = try Realm(configuration: realmConfig)
         } catch {

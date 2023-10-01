@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AnimationDetailVC: UIViewController {
 
+    let model: AnimationDetailModel = AnimationDetailModel()
+    
+    var animation: Animation
+    init(animation: Animation) {
+        self.animation = animation
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
-
-        // Do any additional setup after loading the view.
+        
     }
     
 

@@ -7,11 +7,14 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 let kAnimationListItemSize = CGSize(width: floor((k320 - (24+12+12+24))/3), height: 180)
 
 class AnimationListVC: UIViewController {
 
+    let model: AnimationListModel = AnimationListModel()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -34,6 +37,8 @@ class AnimationListVC: UIViewController {
     override func loadView() {
         super.loadView()
         
+        title = "Animation List"
+        
         navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: addButton)]
         
         view.addSubview(collectionView)
@@ -42,22 +47,30 @@ class AnimationListVC: UIViewController {
         }
         
         addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        
+        model.delegate = self
+        model.prepare()
     }
     
     @objc func addButtonPressed() {
-        
+        model.addAnimation()
     }
-    
-    
-
-
 }
 
+extension AnimationListVC: AnimationListModelDelegate {
+
+    func refreshAnimations(results: Results<Animation>, del: [Int], ins: [Int], mod: [Int]) {
+        collectionView.reloadData()
+    }
+    
+}
 
 extension AnimationListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let animation = model.animations[indexPath.row]
+        let animationDetailVC: AnimationDetailVC = AnimationDetailVC(animation: animation)
+        present(animationDetailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
@@ -85,12 +98,12 @@ extension AnimationListVC: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return model.animations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as AnimationCell
-        cell.backgroundColor = .blue
+        cell.backgroundColor = .black
         return cell
     }
 }

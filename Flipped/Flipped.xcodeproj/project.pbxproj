@@ -20,7 +20,7 @@
 		D41EE8ED2AC8F5C0003D63EE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8EC2AC8F5C0003D63EE /* Animation.swift */; };
 		D41EE8EF2AC8F5C7003D63EE /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8EE2AC8F5C7003D63EE /* Frame.swift */; };
 		D41EE8F22AC8FBD7003D63EE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8F12AC8FBD7003D63EE /* SnapKit */; };
-		D41EE8F62AC8FC04003D63EE /* FrameArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8F52AC8FC04003D63EE /* FrameArchive.swift */; };
+		D41EE8F62AC8FC04003D63EE /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8F52AC8FC04003D63EE /* Line.swift */; };
 		D41EE8F92AC8FD2E003D63EE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = D41EE8F82AC8FD2E003D63EE /* SwiftyJSON */; };
 		D41EE8FD2AC91327003D63EE /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE8FC2AC91327003D63EE /* DBManager.swift */; };
 		D41EE9012AC91370003D63EE /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE9002AC91370003D63EE /* IntExtension.swift */; };
@@ -43,7 +43,7 @@
 		D41EE8EA2AC8F584003D63EE /* AnimationDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDetailModel.swift; sourceTree = "<group>"; };
 		D41EE8EC2AC8F5C0003D63EE /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		D41EE8EE2AC8F5C7003D63EE /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
-		D41EE8F52AC8FC04003D63EE /* FrameArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameArchive.swift; sourceTree = "<group>"; };
+		D41EE8F52AC8FC04003D63EE /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		D41EE8FC2AC91327003D63EE /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D41EE9002AC91370003D63EE /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		D41EE9022AC9146D003D63EE /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			children = (
 				D41EE8EC2AC8F5C0003D63EE /* Animation.swift */,
 				D41EE8EE2AC8F5C7003D63EE /* Frame.swift */,
-				D41EE8F52AC8FC04003D63EE /* FrameArchive.swift */,
+				D41EE8F52AC8FC04003D63EE /* Line.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41EE8CE2AC8B5D0003D63EE /* AnimationListVC.swift in Sources */,
-				D41EE8F62AC8FC04003D63EE /* FrameArchive.swift in Sources */,
+				D41EE8F62AC8FC04003D63EE /* Line.swift in Sources */,
 				D41EE8EF2AC8F5C7003D63EE /* Frame.swift in Sources */,
 				D41EE8EB2AC8F584003D63EE /* AnimationDetailModel.swift in Sources */,
 				D41EE9012AC91370003D63EE /* IntExtension.swift in Sources */,

@@ -13,8 +13,6 @@ class Animation: Object {
     @Persisted var title = ""
     @Persisted var createdAt = Date()
     
-    @Persisted var selectedFrame: Frame? = nil
-    
     override static func primaryKey() -> String? {
       return "id"
     }
