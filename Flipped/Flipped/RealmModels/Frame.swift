@@ -12,7 +12,7 @@ class Frame: Object {
     @Persisted var id: String = UUID.init().uuidString
     
     @Persisted var animationId: String = ""
-    @Persisted var data: Data = Data()
+    @Persisted var drawingData: Data = Data()
     @Persisted var createdAt = Date()
     
     override static func primaryKey() -> String? {
