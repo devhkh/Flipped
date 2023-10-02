@@ -44,6 +44,8 @@ class AnimationDetailVC: UIViewController {
         return v
     }()
     
+    var isLoadingDrawing: Bool = false
+    
     var animation: Animation
     let model: AnimationDetailModel
     init(animation: Animation) {
@@ -101,6 +103,9 @@ class AnimationDetailVC: UIViewController {
     }
     
     @objc func addFrameButtonPressed() {
+        // clear
+        canvasView.drawing = PKDrawing()
+        
         model.addFrame()
     }
 }
@@ -111,16 +116,32 @@ extension AnimationDetailVC: PKCanvasViewDelegate {
     }
     
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-        if let selectedFrame = model.selectedFrame {
-            model.addLine(selectedFrame: selectedFrame, data: canvasView.drawing.dataRepresentation())
+        if isLoadingDrawing == false {
+            if let selectedFrame = model.selectedFrame {
+                if canvasView.drawing.strokes.count > 0 {
+                    model.addLine(selectedFrame: selectedFrame, data: canvasView.drawing.dataRepresentation())
+                }
+            }
         }
     }
 }
 
 extension AnimationDetailVC: AnimationDetailModelDelegate {
+    func selectedFrame(frame: Frame) {
+        let index = model.getIndex(frame: frame)
+        selectDrawing(index: index)
+    }
     
     func refreshFrames(results: Results<Frame>, del: [Int], ins: [Int], mod: [Int]) {
         bottomView.frameCollectionView.reloadData()
+        if ins.count > 0 {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                let indexPath = IndexPath(row: ins.last ?? 0, section: 0)
+                self.bottomView.frameCollectionView.selectItem(at: indexPath,
+                                                               animated: true,
+                                                               scrollPosition: .left)
+            }
+        }
     }
     
 }
@@ -129,10 +150,23 @@ extension AnimationDetailVC: AnimationDetailModelDelegate {
 extension AnimationDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let frame = model.frames[indexPath.row]
+        selectDrawing(index: indexPath.row)
+    }
+    
+    func selectDrawing(index: Int) {
+        isLoadingDrawing = true
+        let frame = model.frames[index]
         model.selectedFrame = frame
         
+        // clear
         canvasView.drawing = PKDrawing()
+        
+        var allDrawing: PKDrawing = PKDrawing()
+        for lineData in model.getLines(selectedFrame: frame) {
+            allDrawing.append(lineData.drawing)
+        }
+        canvasView.drawing = allDrawing
+        isLoadingDrawing = false
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

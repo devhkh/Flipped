@@ -14,7 +14,6 @@ class Line: Object {
     @Persisted var animationId: String = ""
     @Persisted var frameId: String = ""
     @Persisted var createdAt = Date()
-    @Persisted var drawingData: Data = Data()
  
     override static func primaryKey() -> String? {
       return "id"
