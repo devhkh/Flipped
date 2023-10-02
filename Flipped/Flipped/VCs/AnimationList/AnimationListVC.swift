@@ -34,6 +34,15 @@ class AnimationListVC: UIViewController {
         return v
     }()
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        model.delegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         
@@ -48,7 +57,6 @@ class AnimationListVC: UIViewController {
         
         addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
         
-        model.delegate = self
         model.prepare()
     }
     
@@ -69,8 +77,11 @@ extension AnimationListVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let animation = model.animations[indexPath.row]
+        print(animation.id)
         let animationDetailVC: AnimationDetailVC = AnimationDetailVC(animation: animation)
-        present(animationDetailVC, animated: true)
+        let animationDetailNavi = UINavigationController(rootViewController: animationDetailVC)
+        animationDetailNavi.modalPresentationStyle = .fullScreen
+        present(animationDetailNavi, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

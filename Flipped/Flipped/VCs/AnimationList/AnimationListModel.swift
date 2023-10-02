@@ -24,7 +24,7 @@ class AnimationListModel: NSObject {
     let realm = DBManager.SI.realm!
 
     lazy var animations: Results<Animation> = {
-        let results = realm.objects(Animation.self)
+        let results = realm.objects(Animation.self).sorted(byKeyPath: "createdAt")
         return results
     }()
     
@@ -47,7 +47,7 @@ class AnimationListModel: NSObject {
     }
     
     func addAnimation() {
-        var newAnimation = Animation()
+        let newAnimation = Animation()
         newAnimation.title = "example"
         try! self.realm.write() {
             self.realm.add(newAnimation)

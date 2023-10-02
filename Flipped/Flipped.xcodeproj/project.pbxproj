@@ -28,6 +28,8 @@
 		D41EE9052AC914C5003D63EE /* AnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE9042AC914C5003D63EE /* AnimationCell.swift */; };
 		D41EE9072AC914E3003D63EE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE9062AC914E3003D63EE /* ColorExtension.swift */; };
 		D41EE9092AC92976003D63EE /* CustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE9082AC92976003D63EE /* CustomWindow.swift */; };
+		D41EE9112ACA34C0003D63EE /* AnimationDetailFrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE9102ACA34C0003D63EE /* AnimationDetailFrameCell.swift */; };
+		D41EE9132ACA3A87003D63EE /* AnimationDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EE9122ACA3A87003D63EE /* AnimationDetailBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		D41EE9042AC914C5003D63EE /* AnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCell.swift; sourceTree = "<group>"; };
 		D41EE9062AC914E3003D63EE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		D41EE9082AC92976003D63EE /* CustomWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWindow.swift; sourceTree = "<group>"; };
+		D41EE9102ACA34C0003D63EE /* AnimationDetailFrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDetailFrameCell.swift; sourceTree = "<group>"; };
+		D41EE9122ACA3A87003D63EE /* AnimationDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDetailBottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				D41EE8E72AC8F56A003D63EE /* AnimationDetailVC.swift */,
+				D41EE9122ACA3A87003D63EE /* AnimationDetailBottomView.swift */,
+				D41EE9102ACA34C0003D63EE /* AnimationDetailFrameCell.swift */,
 				D41EE8EA2AC8F584003D63EE /* AnimationDetailModel.swift */,
 			);
 			path = AnimationDetail;
@@ -241,9 +247,11 @@
 				D41EE8F62AC8FC04003D63EE /* Line.swift in Sources */,
 				D41EE8EF2AC8F5C7003D63EE /* Frame.swift in Sources */,
 				D41EE8EB2AC8F584003D63EE /* AnimationDetailModel.swift in Sources */,
+				D41EE9132ACA3A87003D63EE /* AnimationDetailBottomView.swift in Sources */,
 				D41EE9012AC91370003D63EE /* IntExtension.swift in Sources */,
 				D41EE9072AC914E3003D63EE /* ColorExtension.swift in Sources */,
 				D41EE8CA2AC8B5D0003D63EE /* AppDelegate.swift in Sources */,
+				D41EE9112ACA34C0003D63EE /* AnimationDetailFrameCell.swift in Sources */,
 				D41EE8FD2AC91327003D63EE /* DBManager.swift in Sources */,
 				D41EE9092AC92976003D63EE /* CustomWindow.swift in Sources */,
 				D41EE9032AC9146D003D63EE /* UIExtension.swift in Sources */,
