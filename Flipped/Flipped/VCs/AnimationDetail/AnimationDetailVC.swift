@@ -99,7 +99,9 @@ class AnimationDetailVC: UIViewController {
     }
     
     @objc func makeAnimationButtonPressed() {
-        
+        let images: [UIImage] = model.makeImagesFromFrames(canvasView: canvasView)
+        let makeAnimationVC: MakeAnimationVC = MakeAnimationVC(images: images)
+        present(makeAnimationVC, animated: true)
     }
     
     @objc func addFrameButtonPressed() {
@@ -107,6 +109,14 @@ class AnimationDetailVC: UIViewController {
         canvasView.drawing = PKDrawing()
         
         model.addFrame()
+    }
+    
+    func selectFrameCollectionView(index: Int) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.bottomView.frameCollectionView.selectItem(at: IndexPath(row: index, section: 0),
+                                                      animated: false,
+                                                      scrollPosition: .left)
+        }
     }
 }
 
@@ -127,23 +137,18 @@ extension AnimationDetailVC: PKCanvasViewDelegate {
 }
 
 extension AnimationDetailVC: AnimationDetailModelDelegate {
-    func selectedFrame(frame: Frame) {
+    func selectFrame(frame: Frame) {
         let index = model.getIndex(frame: frame)
         selectDrawing(index: index)
+        selectFrameCollectionView(index: index)
     }
     
     func refreshFrames(results: Results<Frame>, del: [Int], ins: [Int], mod: [Int]) {
         bottomView.frameCollectionView.reloadData()
-        if ins.count > 0 {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-                let indexPath = IndexPath(row: ins.last ?? 0, section: 0)
-                self.bottomView.frameCollectionView.selectItem(at: indexPath,
-                                                               animated: true,
-                                                               scrollPosition: .left)
-            }
+        if let index = ins.last {
+            selectFrameCollectionView(index: index)
         }
     }
-    
 }
 
 

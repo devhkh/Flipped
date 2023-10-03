@@ -10,7 +10,7 @@ import RealmSwift
 import PencilKit
 
 protocol AnimationDetailModelDelegate: AnyObject {
-    func selectedFrame(frame: Frame)
+    func selectFrame(frame: Frame)
     func refreshFrames(results: Results<Frame>, del: [Int], ins: [Int], mod: [Int])
 }
 
@@ -70,7 +70,7 @@ class AnimationDetailModel: NSObject {
         }
         
         if let selectedFrame = self.selectedFrame {
-            delegate?.selectedFrame(frame: selectedFrame)
+            delegate?.selectFrame(frame: selectedFrame)
         }
     }
     
@@ -80,6 +80,7 @@ class AnimationDetailModel: NSObject {
         try! self.realm.write() {
             self.realm.add(newFrame)
         }
+        delegate?.selectFrame(frame: newFrame)
     }
     
     func addLine(selectedFrame: Frame, data: Data) {
@@ -101,8 +102,10 @@ class AnimationDetailModel: NSObject {
     
     func saveDrawingFile(name: String, data: Data) throws {
         do {
-            // Save the drawing to a file
-            let documentsUrl = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let documentsUrl = try FileManager.default.url(for: .documentDirectory, 
+                                                           in: .userDomainMask,
+                                                           appropriateFor: nil,
+                                                           create: true)
             let drawingUrl = documentsUrl.appendingPathComponent("drawing")
             try FileManager.default.createDirectory(at: drawingUrl, withIntermediateDirectories: true, attributes: nil)
             
@@ -131,8 +134,10 @@ class AnimationDetailModel: NSObject {
     
     func getDrawingFile(name: String) -> PKDrawing? {
         do {
-            // Save the drawing to a file
-            let documentsURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let documentsURL = try FileManager.default.url(for: .documentDirectory, 
+                                                           in: .userDomainMask,
+                                                           appropriateFor: nil,
+                                                           create: true)
             let fileURL = documentsURL.appending(path: "drawing").appending(component: name)
             let data = try Data(contentsOf: fileURL)
             let drawingData = try PKDrawing(data: data)
@@ -143,12 +148,28 @@ class AnimationDetailModel: NSObject {
     }
     
     func getIndex(frame: Frame) -> Int {
-        let fames = realm.objects(Frame.self)
+        let query = String(format: "animationId = '%@'", animation.id)
+        let fames = realm.objects(Frame.self).filter(query).sorted(byKeyPath: "createdAt")
         if let index = fames.index(of: frame) {
             return index
         }
         return 0
     }
+    
+    func makeImagesFromFrames(canvasView: PKCanvasView) -> [UIImage] {
+        let query = String(format: "animationId = '%@'", animation.id)
+        let fames = realm.objects(Frame.self).filter(query).sorted(byKeyPath: "createdAt")
+        
+        var images: [UIImage] = []
+        for frame in frames {
+            var allDrawing: PKDrawing = PKDrawing()
+            for lineData in getLines(selectedFrame: frame) {
+                allDrawing.append(lineData.drawing)
+            }
+            let image = allDrawing.image(from: canvasView.bounds, scale: CGFloat(1.0))
+            images.append(image)
+        }
+        return images
+    }
 }
-
 
